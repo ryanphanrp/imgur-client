@@ -8,7 +8,7 @@ import {
 import { Observable } from 'rxjs';
 
 const TOKEN_HEADER_KEY = 'Authorization';
-const accessToken = '7aca3ad2bd15b473c622ec8837f9cb7ac9a8a30e';
+const accessToken = 'your_access_token';
 
 
 @Injectable()

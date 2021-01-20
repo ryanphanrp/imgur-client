@@ -1,0 +1,15 @@
+<div class="head-list-album">
+    <button class="btn" [routerLink]="['../create']">Create a new album</button>
+</div>
+<div class="container-albums">
+    <div class="data" *ngFor="let album of listAlbums$ | async">
+        <div class="album" [routerLink]="['/detail', album.id]">
+            <div class="img-cover">
+                <img src="https://i.imgur.com/{{ album?.cover }}.jpg" alt="{{ album?.title }}">
+            </div>
+            <div class="info-album">
+                <h4 class="title-album">{{ album?.title }}</h4>
+            </div>
+        </div>
+    </div>
+</div>

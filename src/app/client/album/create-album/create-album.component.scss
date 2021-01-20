@@ -1,0 +1,51 @@
+.container-create-album {
+    @apply flex flex-col justify-center;
+}
+
+.header-create-album {
+    @apply shadow-lg p-4 bg-white rounded-lg mb-4;
+}
+
+.body-create-album {
+    @apply shadow-lg p-4 bg-white rounded-lg;
+}
+
+.label {
+    @apply font-semibold;
+}
+
+
+.btn:disabled {
+    @apply bg-red-600 text-white;
+}
+
+.btn-submit {
+    @apply md:w-32 bg-indigo-600;
+    @apply text-white font-bold py-3 px-6 rounded-lg mt-3;
+}
+
+.btn-submit:hover {
+    @apply bg-blue-600;
+    @apply bg-indigo-500 transition ease-in-out duration-300;
+}
+
+.title-input {
+    @apply w-full mt-2 py-3 px-3 rounded-lg bg-white border-2 border-gray-400 text-gray-800 font-semibold;
+    @apply focus:border-indigo-500 focus:outline-none;
+}
+
+.des-input {
+    @apply w-full border-gray-600 border-2 p-2 rounded-lg;
+}
+
+.create-title {
+    @apply font-semibold text-blue-500 font-mono text-4xl m-0;
+}
+
+option {
+    @apply font-semibold p-2 rounded-lg;
+}
+
+option:hover {
+    @apply text-white bg-blue-500;
+}

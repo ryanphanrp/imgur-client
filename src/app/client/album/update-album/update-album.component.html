@@ -1,0 +1,35 @@
+<div class="container-create-album">
+    <div class="header-create-album">
+        <p class="create-title">Update album</p>
+    </div>
+    <div class="body-create-album">
+        <form class="p-6 flex flex-col justify-center" [formGroup]="alForm" (ngSubmit)="submitForm()">
+
+            <!-- Title -->
+            <div class="flex flex-col">
+                <label for="title" class="hidden">Title</label>
+                <input formControlName="title" type="name" name="name" id="name" placeholder="Title"
+                    class="title-input">
+            </div>
+
+            <!-- Description -->
+            <div class="flex flex-col mt-2">
+                <label for="description" class="hidden">Description</label>
+                <textarea formControlName="description" type="tel" name="tel" id="tel" placeholder="Description"
+                    class="title-input"></textarea>
+            </div>
+
+            <!-- Privacy -->
+            <select class="title-input" formControlName="privacy" id="privacy">
+                <option value="hidden" selected>Hidden</option>
+                <option value="secret">Secret</option>
+                <option value="public">Public</option>
+            </select>
+
+            <button type="submit" [disabled]="!alForm.valid" class="btn btn-submit">
+                Submit
+            </button>
+        </form>
+    </div>
+
+</div>

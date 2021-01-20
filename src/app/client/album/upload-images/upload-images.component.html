@@ -1,0 +1,26 @@
+<!-- Action for upload -->
+<div class="action-upload">
+  <label>
+    <input #selectfile (change)="selectFile($event)" multiple type="file" />
+  </label>
+
+  <button class="btn btn-select" (click)="clickSelectFiles()">{{ messageCount }}</button>
+
+  <button class="btn btn-upload" (click)="upload()" [disabled]="!selectedFiles" nz-button>
+    Upload
+  </button>
+</div>
+
+<!-- Progress files upload -->
+<div *ngFor="let progress of listProgress" class="file-upload">
+  <div nz-row>
+    <div nz-col nzSpan="8" class="left">
+      <img class="preview-upload" src="{{ progress.preview }}" alt="">
+    </div>
+    <div nz-col nzSpan="16" class="right">
+      <div class="title-progress">{{ progress.title }}</div>
+      <nz-progress *ngIf="progress.show" [nzPercent]="progress.percentage" nzSize="small"
+        nzStatus="{{ progress.status }}"></nz-progress>
+    </div>
+  </div>
+</div>

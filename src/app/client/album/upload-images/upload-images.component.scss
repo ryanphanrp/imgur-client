@@ -1,0 +1,58 @@
+// Action
+.action-upload {
+    @apply flex flex-row;
+    @apply w-full;
+}
+
+label {
+    display: none;
+}
+
+// Progress
+.title-progress {
+    @apply font-semibold;
+}
+
+.file-upload {
+    @apply p-1 my-1;
+    @apply border border-blue-500;
+}
+
+.preview-upload {
+    height: 77px;
+    width: 77px;
+    @apply rounded-lg;
+}
+
+.left {
+    @apply flex items-center justify-center;
+}
+
+.right {
+    padding: 0 11px;
+}
+
+.btn {
+    @apply p-2 my-2;
+    @apply font-semibold;
+    @apply rounded-lg;
+    @apply border-2;
+}
+
+.btn-upload {
+    @apply bg-blue-400 border-blue-900;
+    @apply text-white;
+    @apply w-2/6;
+    @apply ml-1;
+}
+
+.btn-select {
+    @apply bg-white border-blue-600;
+    @apply text-blue-600;
+    @apply w-4/6;
+}
+
+.btn:focus {
+    outline: none;
+    @apply bg-green-600 text-white border-0;
+}

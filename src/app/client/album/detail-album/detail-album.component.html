@@ -1,0 +1,51 @@
+<div class="action-zone">
+    <button class="btn action" (click)="backToList()">Back to List</button>
+    <button class="btn action" nz-button nzType="primary" (click)="open()">Upload</button>
+    <button class="btn action" (click)="switchMode()">Edit</button>
+
+</div>
+
+<div class="action-zone" *ngIf="isEditing">
+    <button class="btn action update-album" [routerLink]="['update']">Update Information Album</button>
+    <button class="btn action del-album" (click)="showDeleteAlbumConfirm()">Delete this album</button>
+    <button class="btn action del-all" *ngIf="this.idList.length" (click)="showDeleteConfirm()">Detele all
+        selection</button>
+</div>
+
+<div class="album-description">
+    <div class="title" (click)="this.isShowDescription = !this.isShowDescription">{{ thisAlbum?.title }}</div>
+    <div class="description" *ngIf="isShowDescription">{{ thisAlbum?.description }}</div>
+</div>
+
+
+<div class="detail-album">
+    <div class="images-of-album">
+        <div class="img-data" *ngFor="let img of thisAlbum?.images">
+            <div class="img-cover" *ngIf="!isEditing; else editing">
+                <button class="btn btn-del" (click)="deleteThisImage(img?.id)">Delete</button>
+                <img class="img" (click)="showModal(img?.link)" src="{{ img?.link }}" alt="{{ img?.id }}">
+            </div>
+            <ng-template #editing>
+                <input (change)="onChangeCheckbox($event, img?.id)" id="{{ img?.id }}" style="display: none"
+                    type="checkbox">
+                <label for="{{ img?.id }}">
+                    <img alt="{{ img?.id }}" class="img" src="{{ img?.link }}">
+                </label>
+            </ng-template>
+        </div>
+    </div>
+</div>
+
+<nz-drawer [nzClosable]="false" [nzVisible]="visible" [nzWidth]="500" [nzPlacement]="placement"
+    nzTitle="Upload new images" (nzOnClose)="close()">
+    <ng-container *nzDrawerContent>
+        <app-upload-images [idOfAlbum]="this.thisAlbum?.id" (isSuccess)="getThisAlbum()"></app-upload-images>
+    </ng-container>
+</nz-drawer>
+
+<!--Modal-->
+<nz-modal (nzOnCancel)="handleCancel()" [(nzVisible)]="isVisible" [nzBodyStyle]="{padding: 0}" [nzFooter]="null">
+    <ng-container *nzModalContent>
+        <img alt="" class="img-modal" src="{{ imgUrl }}">
+    </ng-container>
+</nz-modal>

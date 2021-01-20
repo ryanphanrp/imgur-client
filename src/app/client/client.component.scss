@@ -1,0 +1,48 @@
+:host {
+    text-align: center;
+}
+
+nz-header{
+    background-image: radial-gradient( circle farthest-corner at 11.7% 80.6%,  rgba(249,185,255,1) 0%, rgba(177,172,255,1) 49.3%, rgba(98,203,255,1) 89% );
+}
+
+nz-content {
+    background: transparent;
+    height: 100%;
+}
+
+
+/**
+* Main Layout
+*/
+
+.main-layout {
+    min-height: 100vh;
+}
+
+.container-client {
+    padding: 1em;
+}
+
+
+// Title
+h1 {
+    @apply font-semibold;
+    @apply text-4xl;
+    @apply font-mono;
+    color: white;
+}
+
+/**
+* Head
+*/
+
+.head {
+    @apply p-4;
+    @apply bg-white;
+    @apply my-2;
+}
+
+.inner-content {
+    height: 100%;
+}

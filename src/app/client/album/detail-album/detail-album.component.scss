@@ -1,0 +1,193 @@
+/**
+* Action
+*/
+.action-zone {
+    @apply flex flex-col md:flex-row justify-start;
+    @apply bg-white rounded-lg;
+    @apply p-2 mb-2;
+}
+
+.action {
+    @apply mb-2;
+}
+
+/**
+* Images
+*/
+
+.images-of-album {
+    @apply p-2;
+    @apply bg-white rounded-lg;
+    @apply grid grid-cols-1 md:grid-cols-4;
+}
+
+.img-data {
+    padding: 5px;
+}
+
+.img-cover {
+    position: relative;
+    @apply rounded-xl;
+    @apply flex justify-end;
+}
+
+.img-cover:hover {
+    @apply shadow-lg;
+}
+
+.img {
+    height: 250px;
+    width: 100%;
+    @apply rounded-xl;
+}
+
+/* Show Image with modal */
+.img-modal {
+    max-height: 50%;
+    width: 100%;
+  }
+
+
+/* Button */
+.btn {
+    @apply font-semibold text-red-400;
+    @apply p-2 md:mr-2 md:mb-0;
+    @apply bg-white border-red-400 border-2;
+    @apply rounded-lg;
+}
+
+.btn:focus {
+    outline: none;
+    @apply border-green-600 text-green-600;
+}
+
+.del-album {
+    @apply border-2;
+    @apply border-red-600;
+    @apply text-red-600;
+    @apply bg-white;
+}
+
+.del-all:focus {
+    @apply bg-red-600;
+    @apply text-white;
+}
+
+
+.del-all {
+    @apply bg-red-400;
+    @apply text-white;
+}
+
+.del-all:focus {
+    @apply text-red-400 bg-white border-red-600;
+}
+
+.update-album {
+    @apply bg-white border-blue-400 border-2;
+    @apply text-blue-400;
+}
+
+.btn-del {
+    position: absolute;
+    z-index: 100;
+    margin: 5px;
+    display: none;
+    @apply bg-red-400;
+    @apply text-white;
+}
+
+.btn-del:focus {
+    @apply bg-white text-red-600 border-red-600;
+}
+
+.img-cover:hover .btn-del {
+    display: block;
+}
+
+/* Checkbox */
+label {
+    border: 1px solid #fff;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    height: 100%;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  label::before {
+    background-color: white;
+    color: white;
+    content: " ";
+    display: block;
+    border-radius: 50%;
+    border: 1px solid grey;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 28px;
+    transition-duration: 0.4s;
+    transform: scale(0);
+  }
+  
+  
+  :checked+label {
+    border-color: #ddd;
+  }
+  
+  :checked+label::before {
+    content: "✓";
+    background-color: limegreen;
+    transform: scale(1);
+  }
+
+
+/** Description */
+
+.album-description {
+    @apply my-4 md:mb-4;
+    @apply flex flex-col items-start;
+    @apply rounded-lg;
+    @apply bg-gray-300;
+}
+
+
+.title {
+    @apply bg-white;
+    @apply p-2;
+    @apply rounded-lg;
+    @apply w-full;
+    @apply font-semibold text-blue-700 text-lg;
+}
+
+.description {
+    @apply w-full;
+    @apply px-8;
+    @apply py-2;
+    @apply rounded-b-lg;
+    @apply text-left;
+    @apply font-mono;
+    @apply text-gray-900;
+}
+
+/** Drawer **/
+
+::ng-deep .ant-drawer-header {
+    @apply bg-blue-400;
+}
+
+::ng-deep .ant-drawer-title {
+    @apply font-semibold text-white;
+}
+
+::ng-deep .ant-drawer-body {
+    @apply p-2;
+}
